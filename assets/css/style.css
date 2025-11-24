@@ -1,0 +1,124 @@
+/* Import Celebration Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Global */
+body {
+    background-color: #021945 !important;
+    font-family: "Poppins", sans-serif;
+    color: #FFD700;
+    margin: 0;
+    padding: 0;
+}
+
+/* HERO Banner - Royal Blue + Gold Sparkles */
+.hero {
+    background: linear-gradient(#021945, #021945), 
+                radial-gradient(circle at center, rgba(255,215,0,0.4), transparent 70%),
+                radial-gradient(circle at 20% 20%, rgba(255,215,0,0.25), transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,215,0,0.25), transparent 60%);
+    background-blend-mode: overlay;
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 4px solid #FFD700;
+}
+
+/* Headings with Celebratory Font */
+/* Headings with Celebratory Font */
+h1, h3 {
+    font-family: "Lobster", cursive;
+    color: #021945 !important; /* Royal Blue */
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.9); /* Gold glow behind text */
+}
+
+h2 {
+    font-family: "Lobster", cursive;
+    color: #FFD700;
+    letter-spacing: 1px;
+}
+
+/* Fest Cards - Gold with Blue Text */
+.event-card {
+    background-color: #FFD700 !important;
+    border: 3px solid #FFD700 !important;
+    color: #021945 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.event-card .card-title,
+.event-card p {
+    color: #021945 !important;
+    font-weight: bold;
+}
+
+/* Glow Hover Effect */
+.event-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 1);
+    cursor: pointer;
+}
+
+/* Registration Form Container */
+.form-container {
+    max-width: 750px;
+    margin: auto;
+    background-color: #021945;
+    border: 3px solid #FFD700;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+    color: #FFD700;
+}
+
+/* Labels */
+label {
+    color: #FFD700;
+    font-weight: 600;
+}
+
+/* Input fields */
+input, textarea {
+    background-color: #041c6a !important;
+    border: 2px solid #FFD700 !important;
+    color: #FFD700 !important;
+    border-radius: 8px !important;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: #FFD700;
+    color: #021945;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.btn-submit:hover {
+    background-color: #e6c200;
+}
+
+/* Admin Page Table Style */
+.table-dark {
+    background-color: #021945 !important;
+    color: #FFD700 !important;
+}
+.table-bordered td, .table-bordered th {
+    border: 2px solid #FFD700 !important;
+}
+.table-striped tbody tr:nth-child(even) {
+    background-color: #03205c !important;
+}
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #021945 !important;
+}
+
+/* Footer */
+footer {
+    background-color: #021945;
+    color: #FFD700;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+}
