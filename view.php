@@ -1,103 +1,68 @@
 <?php
 include("db/config.php");
-
-// Fetch all registrations
-$sql = "SELECT * FROM registrations ORDER BY created_at DESC";
-$result = $conn->query($sql);
+$res = $conn->query("SELECT * FROM registrations ORDER BY id DESC");
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>View Registrations</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=7">
+<title>All Registrations</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=20">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark"
-     style="background-color:#021945; border-bottom:2px solid #FFD700;">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html" style="color:#FFD700;">
-      AccessPlus Fest
-    </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#festNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg" style="background-color:#ffffff; border-bottom:1px solid #ccc;">
+<div class="container">
+<a class="navbar-brand fw-bold text-dark" href="index.html">Event Registration</a>
+</div></nav>
 
-    <div class="collapse navbar-collapse" id="festNavbar">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">
-            🏠 Home
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="view.php">
-            📋 View Registrations
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<section class="py-4">
+<div class="container table-container">
 
-    <section class="hero py-4 text-center">
-        <div class="container">
-            <h1>All Registrations</h1>
-        </div>
-    </section>
+<h3 class="mb-3">All Registrations</h3>
 
-    <div class="container my-5">
-        <table class="table table-dark table-striped table-bordered text-center align-middle">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>USN</th>
-                    <th>Semester</th>
-                    <th>Branch</th>
-                    <th>Email</th>
-                    <th>Volunteer</th>
-                    <th>Team Size</th>
-                    <th>Event</th>
-                    <th>Registered On</th>
-                </tr>
-            </thead>
+<table class="table table-bordered bg-white">
+<thead>
+<tr>
+<th>ID</th><th>Event</th><th>Name</th><th>USN</th>
+<th>Sem</th><th>Branch</th><th>Email</th>
+<th>Volunteer</th><th>Team</th>
+<th>Perf</th><th>Project</th><th>Tech</th>
+<th>Game</th><th>Problem</th><th>GitHub</th><th>Art</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
 
-            <tbody>
-                <?php
-                if ($result->num_rows > 0) {
-                    $count = 1;
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                            <td>".$count++."</td>
-                            <td>".$row['fullname']."</td>
-                            <td>".$row['usn']."</td>
-                            <td>".$row['semester']."</td>
-                            <td>".$row['branch']."</td>
-                            <td>".$row['email']."</td>
-                            <td>".$row['volunteer']."</td>
-                            <td>".$row['team_size']."</td>
-                            <td>".$row['event_name']."</td>
-                            <td>".$row['created_at']."</td>
-                        </tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='10'>No registrations found</td></tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+<?php while($r=$res->fetch_assoc()) { ?>
+<tr>
+<td><?= $r['id'] ?></td>
+<td><?= $r['event_name'] ?></td>
+<td><?= $r['fullname'] ?></td>
+<td><?= $r['usn'] ?></td>
+<td><?= $r['semester'] ?></td>
+<td><?= $r['branch'] ?></td>
+<td><?= $r['email'] ?></td>
+<td><?= $r['volunteer'] ?></td>
+<td><?= $r['team_size'] ?></td>
 
-        <div class="text-center">
-            <a href="index.html" class="btn btn-submit">Back to Events</a>
-        </div>
-    </div>
+<td><?= $r['performance_type'] ?></td>
+<td><?= $r['project_title'] ?></td>
+<td><?= $r['tech_used'] ?></td>
+<td><?= $r['game_name'] ?></td>
+<td><?= $r['problem_preference'] ?></td>
+<td><?= $r['github'] ?></td>
+<td><?= $r['art_category'] ?></td>
+
+<td><?= $r['created_at'] ?></td>
+</tr>
+<?php } ?>
+
+</tbody></table>
+
+</div>
+</section>
 
 </body>
 </html>
-

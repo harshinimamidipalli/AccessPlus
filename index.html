@@ -2,153 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AccessPlus Fest Portal</title>
+    <title>Event Registration Portal</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="assets/css/style.css?v=5">
+    <link rel="stylesheet" href="assets/css/style.css?v=20">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark"
-     style="background-color:#021945; border-bottom:2px solid #FFD700;">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html" style="color:#FFD700;">
-      AccessPlus Fest
-    </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#festNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="festNavbar">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">
-            🏠 Home
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="view.php">
-            📋 View Registrations
-          </a>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-lg" style="background-color:#ffffff; border-bottom:1px solid #ccc;">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-dark" href="index.html">Event Registration</a>
     </div>
-  </div>
 </nav>
 
-    <!-- Hero Section -->
-    <section class="hero py-5"
-             style="background: radial-gradient(circle at top, #ffd700 0, #aa8b00 25%, #03205c 90%);">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold mb-3">AccessPlus Fest Portal</h1>
-            <p class="lead mb-0">
-                Register for inclusive & accessible college fest events – every student, every ability, every voice.
-            </p>
+<section class="py-4" style="background-color:#ffffff; border-bottom:1px solid #ccc;">
+    <div class="container text-center">
+        <h2 class="fw-bold">Event Registration Portal</h2>
+        <p class="text-secondary">Select an event to register</p>
+    </div>
+</section>
+
+<section class="py-4">
+    <div class="container">
+        <div class="row g-3">
+
+            <div class="col-md-4"><a href="eventRegistration.php?event=Crescendo"><div class="p-3 border bg-white text-center">Crescendo (Cultural Night)</div></a></div>
+            <div class="col-md-4"><a href="eventRegistration.php?event=InnovateX"><div class="p-3 border bg-white text-center">InnovateX (Tech Symposium)</div></a></div>
+            <div class="col-md-4"><a href="eventRegistration.php?event=CircuitClash"><div class="p-3 border bg-white text-center">Circuit Clash (E-Sports)</div></a></div>
+
+            <div class="col-md-6"><a href="eventRegistration.php?event=CodeStorm"><div class="p-3 border bg-white text-center">CodeStorm (Hackathon)</div></a></div>
+            <div class="col-md-6"><a href="eventRegistration.php?event=ArtWave"><div class="p-3 border bg-white text-center">ArtWave (Art & Creativity)</div></a></div>
+
         </div>
-    </section>
 
-    <!-- Events Grid -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Choose Your Event</h2>
-
-            <div class="row g-4">
-
-                <!-- Crescendo – Cultural Night -->
-                <div class="col-md-4">
-                    <a href="eventRegistration.php?event=Crescendo%20%E2%80%93%20Cultural%20Night" class="text-decoration-none">
-                        <div class="card bg-dark border-warning h-100 shadow event-card">
-                            <div class="card-body text-center">
-                                <h3 class="card-title text-warning mb-2">Crescendo</h3>
-                                <p class="text-light-50 mb-1">Cultural Night</p>
-                                <p class="small text-muted mb-0">
-                                    Music, dance & performances under the fest lights.
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- InnovateX – Tech Symposium -->
-                <div class="col-md-4">
-                    <a href="eventRegistration.php?event=InnovateX%20%E2%80%93%20Tech%20Symposium" class="text-decoration-none">
-                        <div class="card bg-dark border-warning h-100 shadow event-card">
-                            <div class="card-body text-center">
-                                <h3 class="card-title text-warning mb-2">InnovateX</h3>
-                                <p class="text-light-50 mb-1">Tech Symposium</p>
-                                <p class="small text-muted mb-0">
-                                    Talks, demos & panels on cutting-edge innovation.
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Circuit Clash – E-Sports -->
-                <div class="col-md-4">
-                    <a href="eventRegistration.php?event=Circuit%20Clash%20%E2%80%93%20E-Sports" class="text-decoration-none">
-                        <div class="card bg-dark border-warning h-100 shadow event-card">
-                            <div class="card-body text-center">
-                                <h3 class="card-title text-warning mb-2">Circuit Clash</h3>
-                                <p class="text-light-50 mb-1">E-Sports Arena</p>
-                                <p class="small text-muted mb-0">
-                                    Competitive gaming with shoutcasters & live scores.
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- CodeStorm – Hackathon -->
-                <div class="col-md-6">
-                    <a href="eventRegistration.php?event=CodeStorm%20%E2%80%93%20Hackathon" class="text-decoration-none">
-                        <div class="card bg-dark border-warning h-100 shadow event-card">
-                            <div class="card-body text-center">
-                                <h3 class="card-title text-warning mb-2">CodeStorm</h3>
-                                <p class="text-light-50 mb-1">24-Hour Hackathon</p>
-                                <p class="small text-muted mb-0">
-                                    Build solutions overnight with mentors & coffee.
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- ArtWave – Art & Creativity Arena -->
-                <div class="col-md-6">
-                    <a href="eventRegistration.php?event=ArtWave%20%E2%80%93%20Art%20%26%20Creativity%20Arena" class="text-decoration-none">
-                        <div class="card bg-dark border-warning h-100 shadow event-card">
-                            <div class="card-body text-center">
-                                <h3 class="card-title text-warning mb-2">ArtWave</h3>
-                                <p class="text-light-50 mb-1">Art & Creativity Arena</p>
-                                <p class="small text-muted mb-0">
-                                    Installations, live sketching & creative showcases.
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="text-center mt-5">
-                <a href="view.php" class="btn btn-outline-warning">
-                    View All Registrations (Admin)
-                </a>
-            </div>
+        <div class="text-center mt-4">
+            <a href="view.php" class="btn btn-primary">View All Registrations</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="py-3 bg-black text-center text-muted small">
-        &copy; <?php echo date('Y'); ?> AccessPlus Fest • Designed for inclusive campus events
-    </footer>
+<footer class="text-center text-secondary py-3">
+    &copy; <?php echo date('Y'); ?> Event Registration Portal
+</footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
